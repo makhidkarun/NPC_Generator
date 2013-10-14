@@ -1,4 +1,10 @@
 <?php
+/*
+function __autoload($classname)
+{
+    require_once $classname . '.php';
+}
+*/
 
 require_once 'Trooper.php';
 //require_once 'TrooperParams.php';
