@@ -1,0 +1,67 @@
+<?php
+
+$person_params['names']['humaniti']['last'][] = 'Aas'; 
+$person_params['names']['humaniti']['last'][] = 'Barbier'; 
+$person_params['names']['humaniti']['last'][] = 'Gregoire'; 
+$person_params['names']['humaniti']['last'][] = 'Gregory'; 
+$person_params['names']['humaniti']['last'][] = 'Malone'; 
+$person_params['names']['humaniti']['last'][] = 'Roman'; 
+$person_params['names']['humaniti']['last'][] = 'Romano'; 
+$person_params['names']['humaniti']['last'][] = 'Terry'; 
+$person_params['names']['humaniti']['last'][] = 'Tessier'; 
+$person_params['names']['humaniti']['last'][] = 'Thomas'; 
+$person_params['names']['humaniti']['last'][] = 'Thomassen'; 
+$person_params['names']['humaniti']['last'][] = 'Vinson'; 
+$person_params['names']['humaniti']['last'][] = 'Virág'; 
+$person_params['names']['humaniti']['last'][] = 'Willems'; 
+$person_params['names']['humaniti']['last'][] = 'Wuyts'; 
+$person_params['names']['humaniti']['last'][] = 'York'; 
+$person_params['names']['humaniti']['last'][] = 'Young'; 
+$person_params['names']['humaniti']['last'][] = 'Zamora'; 
+$person_params['names']['humaniti']['last'][] = 'Zimmerman'; 
+$person_params['names']['humaniti']['female'][] = 'Paulette'; 
+$person_params['names']['humaniti']['female'][] = 'Paulina'; 
+$person_params['names']['humaniti']['female'][] = 'Pauline'; 
+$person_params['names']['humaniti']['female'][] = 'Simone'; 
+$person_params['names']['humaniti']['female'][] = 'Simonne'; 
+$person_params['names']['humaniti']['female'][] = 'Yaeko'; 
+$person_params['names']['humaniti']['female'][] = 'Yael'; 
+$person_params['names']['humaniti']['female'][] = 'Yahaira'; 
+$person_params['names']['humaniti']['female'][] = 'Yolando'; 
+$person_params['names']['humaniti']['female'][] = 'Yolonda'; 
+$person_params['names']['humaniti']['female'][] = 'Yon'; 
+$person_params['names']['humaniti']['female'][] = 'Zada'; 
+$person_params['names']['humaniti']['female'][] = 'Zaida'; 
+$person_params['names']['humaniti']['female'][] = 'Zana'; 
+$person_params['names']['humaniti']['female'][] = 'Zita'; 
+$person_params['names']['humaniti']['female'][] = 'Zoe'; 
+$person_params['names']['humaniti']['female'][] = 'Zofia'; 
+$person_params['names']['humaniti']['female'][] = 'Zoila'; 
+$person_params['names']['humaniti']['female'][] = 'Zola'; 
+$person_params['names']['humaniti']['female'][] = 'Zona'; 
+$person_params['names']['humaniti']['female'][] = 'Zonia'; 
+$person_params['names']['humaniti']['female'][] = 'Zora'; 
+$person_params['names']['humaniti']['female'][] = 'Zoraida'; 
+$person_params['names']['humaniti']['female'][] = 'Zula'; 
+$person_params['names']['humaniti']['female'][] = 'Zulema'; 
+$person_params['names']['humaniti']['female'][] = 'Zulma'; 
+$person_params['names']['humaniti']['male'][] = 'Clair'; 
+$person_params['names']['humaniti']['male'][] = 'Clarence'; 
+$person_params['names']['humaniti']['male'][] = 'Errol'; 
+$person_params['names']['humaniti']['male'][] = 'Ervin'; 
+$person_params['names']['humaniti']['male'][] = 'Jeffry'; 
+$person_params['names']['humaniti']['male'][] = 'Jerald'; 
+$person_params['names']['humaniti']['male'][] = 'Mathew'; 
+$person_params['names']['humaniti']['male'][] = 'Matt'; 
+$person_params['names']['humaniti']['male'][] = 'Ronny'; 
+$person_params['names']['humaniti']['male'][] = 'Roosevelt'; 
+$person_params['names']['humaniti']['male'][] = 'Xavier'; 
+$person_params['names']['humaniti']['male'][] = 'Yong'; 
+$person_params['names']['humaniti']['male'][] = 'Young'; 
+$person_params['names']['humaniti']['male'][] = 'Zachariah'; 
+
+$person_params['names']['humaniti']['count']['female'] = count($person_params['names']['humaniti']['female']);
+$person_params['names']['humaniti']['count']['male'] = count($person_params['names']['humaniti']['male']);
+$person_params['names']['humaniti']['count']['last'] = count($person_params['names']['humaniti']['last']);
+
+?>
