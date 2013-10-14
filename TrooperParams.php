@@ -1,13 +1,32 @@
 <?php
 
-// TrooperParams.php
-// From MANCHUCK on #phpmentoring
+/**
+ * TrooperParams.php
+ * 
+ * To be implemented in various ways.
+ *
+ * PHP Version 5
+ * 
+ * License: This is open source code of some license I don't yet know.
+ * 
+ * @category    Games
+ * @package     Makhidkarun
+ * @author      Leam Hall <leamhall@gmail.com>
+ * @copyright   2012-2013 Leam Hall
+ * @license     license 1 <http://LICENSEURL.example.com>
+ * @version     GIT: 0.2
+ * @link        github.com/makhidkarun/NPC_Generator/blob/master/TrooperParams.php
+ * @see         huh?
+ * @since       Original copyright date
+ * 
+*/
 
 require_once 'MilitaryRoleAbstract.php';
 
-class TrooperParams extends MilitaryRoleAbstract {
-
-    public function __construct() {
+class TrooperParams extends MilitaryRoleAbstract
+{
+    public function __construct()
+    {
 
         $this->set_min_age(16);
         $this->set_max_age(20);
@@ -15,48 +34,55 @@ class TrooperParams extends MilitaryRoleAbstract {
         $this->set_max_rank(2);
         $this->set_rank_group('enlisted');
         $this->additional_skill_tables = array();
-
     }
    
-    protected function set_min_age($num) {
+    protected function setMinAge($num)
+    {
         $this->min_age = $num;
     }
     
-    public function get_min_age() {
+    public function getMinAge()
+    {
         return $this->min_age;
-    } 
+    }
 
-    protected function set_max_age($num) {
+    protected function setMaxAge($num)
+    {
         $this->max_age = $num;
     }
 
-    public function get_max_age() {
+    public function getMaxAge()
+    {
         return $this->max_age;
     }
 
-    protected function set_min_rank($num) {
+    protected function setMinRank($num)
+    {
         $this->min_rank = $num;
     }
 
-    public function get_min_rank() {
+    public function getMinRank()
+    {
         return $this->min_rank;
     }
 
-    protected function set_max_rank($num) {
+    protected function setMaxRank($num)
+    {
         $this->max_rank = $num;
     }
 
-    public function get_max_rank() {
+    public function getMaxRank()
+    {
         return $this->max_rank;
     }
 
-    protected function set_rank_group($group){
+    protected function setRankGroup($group)
+    {
         $this->rank_group = $group;
     }
 
-    public function get_rank_group() {
+    public function getRankGroup()
+    {
         return $this->rank_group;
     }
-
 }
-
