@@ -6,7 +6,9 @@ function __autoload($classname)
 }
 */
 
-require_once 'Trooper.php';
+require_once 'autoload.php';
+
+// require_once 'Trooper.php';
 //require_once 'TrooperParams.php';
 //require_once 'NCOParams.php';
 /*
