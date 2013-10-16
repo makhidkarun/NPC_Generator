@@ -6,6 +6,8 @@
 // Notes:
 //  https://gist.github.com/manchuck/6952598
 //  http://pastebin.com/3DQuBf1q
+// 
+// So far __autoload does not seem to get the require_once files.
 
 require_once 'Being.php';
 require_once 'imperial_ranks.php';
@@ -15,7 +17,8 @@ require_once 'NCOParams.php';
 require_once 'mercenary_skills.php';
 require_once 'person_params.php';
 
-class Trooper extends Being {
+class Trooper extends Being
+{
 
     private $rank, $mos;
     private $min_age, $max_age, $min_rank, $max_rank, $rank_group, $rank_roll;
