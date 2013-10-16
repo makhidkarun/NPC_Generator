@@ -1,0 +1,27 @@
+// Results of a bad run, using autoload:
+
+time php test_Trooper.php 
+How about that Trooper.php!
+The new Infantry ,  , is a 30 year old female with a 695668 UPP.
+GunCbt : 1
+ : 4
+Skill tables: ArmyLife MOS_Infantry NCO 
+
+real    0m0.029s
+user    0m0.017s
+sys 0m0.013s
+
+
+// Results of a good run, without autoload:
+
+time php test_Trooper.php 
+
+The new Infantry 1SG, Roosevelt Zimmerman, is a 29 year old male with a 7469CB UPP.
+GunCbt : 3
+HvyWpn : 3
+Skill tables: ArmyLife MOS_Infantry NCO 
+
+real    0m0.026s
+user    0m0.014s
+sys 0m0.011s
+
