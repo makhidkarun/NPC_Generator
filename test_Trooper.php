@@ -1,16 +1,7 @@
 <?php
-/*
-function __autoload($classname)
-{
-    require_once $classname . '.php';
-}
-*/
 
 require_once 'autoload.php';
 
-// require_once 'Trooper.php';
-//require_once 'TrooperParams.php';
-//require_once 'NCOParams.php';
 /*
 $new_guy = new Trooper( new TrooperParams);
 $desc = "The new ";
@@ -38,6 +29,8 @@ foreach ($new_guy->get_skill_tables() as $table => $value ) {
 echo "\n";
 $desc = '';
 */ 
+
+
 $new_nco = new Trooper(new NCOParams);
 $desc = "The new ";
 $desc .= $new_nco->getMos();

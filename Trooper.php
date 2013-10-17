@@ -9,6 +9,7 @@
 // 
 // So far __autoload does not seem to get the require_once files.
 
+/*
 require_once 'Being.php';
 require_once 'imperial_ranks.php';
 require_once 'MilitaryRoleAbstract.php';
@@ -16,6 +17,9 @@ require_once 'TrooperParams.php';
 require_once 'NCOParams.php';
 require_once 'mercenary_skills.php';
 require_once 'person_params.php';
+*/
+
+require_once 'Being.php';
 
 class Trooper extends Being
 {
@@ -25,6 +29,12 @@ class Trooper extends Being
 
     public function __construct(MilitaryRoleAbstract $role) {
         global $mercenary_skills, $person_params; 
+        // require_once 'imperial_ranks.php';
+       // require_once 'MilitaryRoleAbstract.php';
+       // require_once 'TrooperParams.php';
+       // require_once 'NCOParams.php';
+        require_once 'mercenary_skills.php';
+        require_once 'person_params.php';
 
         $this->gender = $this->setGender(50);
         $this->name =  $this->setName($person_params, 'humaniti', $this->gender);
@@ -66,7 +76,8 @@ class Trooper extends Being
     protected function setRank($rank_group, $rank_roll) 
     {
         // This global will go away when I have a db for it.
-        global $ranks;
+        require_once 'imperial_ranks.php';
+        // global $ranks;
         return $ranks[$rank_group][$rank_roll];
     }
        
