@@ -1,0 +1,83 @@
+Steps to install and use Lithium.
+
+1. cd /var/www/html
+2. git clone git://github.com/UnionOfRAD/framework.git my_app
+3. cd my_app
+4. git submodule init
+5. git submodule update
+6. chmod -R 0777 app/resources
+7. vi app/config/bootstrap.php
+7.1. Uncomment out the line:
+   require __DIR__ . '/bootstrap/connections.php';
+8. vi app/config/bootstrap/connections.php
+8.1. Uncomment the proper database lines.
+    Connections::add('default', array(
+    'type' => 'MongoDb',
+    'host' => 'localhost',
+    'database' => 'my_app'
+    ));
+9. vi app/views/pages/home.html.php 
+
+
+
+Webserver stuff
+
+Edit /etc/httpd/conf/httpd.conf
+Change AllowOverride to All
+        AllowOverride All
+
+Add the directory information for Lithium
+    <Directory "/my_app">
+        Options Indexes FollowSymlinks Multiviews
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+Restart httpd
+
+
+PHP Stuff
+
+Install php-pecl-mongo, or similar.
+? Just get the php driver from mongo.org?
+
+# Note that php.ini uses a semi-colon for comments
+
+Ensure date.timezone is set in php.ini
+[Date]
+; Defines the default timezone used by the date functions
+; http://www.php.net/manual/en/datetime.configuration.php#ini.date.timezone
+date.timezone = US/Eastern
+
+Change Error reporting
+# From:
+error_reporting = E_ALL & ~E_DEPRECATED
+# To:
+error_reporting = E_ALL | E_STRICT
+
+Add mongo.so
+
+;;;;;;;;;;;;;;;;;;;;;;
+; Dynamic Extensions ;
+;;;;;;;;;;;;;;;;;;;;;;
+
+extension=mongo.so
+
+
+
+#### 
+Setting up the blog
+http://lithify.me/docs/manual/quickstart
+
+vi app/models/Posts.php
+
+vi app/controllers/PostsController.php
+
+mkdir app/views/posts
+
+vi app/views/posts/index.html.php
+
+vi app/views/posts/add.html.php
+
+
