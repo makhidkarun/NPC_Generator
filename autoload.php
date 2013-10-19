@@ -1,5 +1,7 @@
 <?php
 
+namespace makhidkarun\NPC_Generator;
+
 function __autoload($class)
 {
     $file = './' . $class . '.php';

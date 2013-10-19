@@ -23,6 +23,8 @@
  * 
 */
 
+// namspace makhidkarun\NPC_Generator;
+
 require_once 'autoload.php';
 
 class Trooper extends Being

@@ -1,5 +1,8 @@
 <?php
 
+// namespace makhidkarun\NPC_Generator;
+use makhidkarun\NPC_Generator;
+
 require_once 'autoload.php';
 
 /*
@@ -31,7 +34,7 @@ $desc = '';
 */ 
 
 
-$new_nco = new Trooper(new NCOParams);
+$new_nco = new makhidkarun\NPC_Generator\Trooper(new makhidkarun\NPC_Generator\NCOParams);
 $desc = "The new ";
 $desc .= $new_nco->getMos();
 $desc .= " ";

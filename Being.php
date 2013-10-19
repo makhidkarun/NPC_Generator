@@ -17,9 +17,11 @@
  * @version     GIT: 0.2
  * @link        github.com/makhidkarun/Traveller_Mercenary_Generator/blob/master/Being.php
  * @see         huh?
- * @since       Original copyright date
+ * @since       2013
  * 
 */
+
+namespace makhidkarun\NPC_Generator;
 
 require_once 'Dice.php';
 
