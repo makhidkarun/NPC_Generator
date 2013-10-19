@@ -33,5 +33,7 @@ Issue Tracker:
 22. TML #1 page layout
 23. Work around using keys where I should use values.
 24. Use a framework like Lithium.
-
+25. Use autoload (in progress)
+26. Use namespaces
+27. Write tests
 
