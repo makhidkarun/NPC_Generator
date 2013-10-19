@@ -1,0 +1,9 @@
+Well, not sure how how work namespaces 
+ - Need to figure out where the files go
+ - How they are called 
+ - How to organize repo and project (makhidkarun) to 
+    best use namespaces and reuse code.
+ - Look at composer for dependencies?
+
+
+

@@ -1,7 +1,7 @@
 <?php
 
 // namespace makhidkarun\NPC_Generator;
-use makhidkarun\NPC_Generator;
+//use makhidkarun\NPC_Generator;
 
 require_once 'autoload.php';
 
