@@ -46,12 +46,12 @@ class Trooper extends Being
 
         // Set the MOS and list of skill tables to choose from
         $this->mos = $this->setMos();       
-        $this->skill_tables = $this->addSkillTables(&$this->skill_tables, 'ArmyLife');
+        $this->skill_tables = $this->addSkillTables($this->skill_tables, 'ArmyLife');
         $mos_table = 'MOS_' . $this->mos;
-        $this->skill_tables = $this->addSkillTables(&$this->skill_tables, $mos_table);
+        $this->skill_tables = $this->addSkillTables($this->skill_tables, $mos_table);
         if ( count($role->additional_skill_tables) > 0  ) {
             foreach ( $role->additional_skill_tables as $key => $value) {
-               $this->skill_tables = $this->addSkillTables(&$this->skill_tables, $value);
+               $this->skill_tables = $this->addSkillTables($this->skill_tables, $value);
             }
         }
 
@@ -62,7 +62,7 @@ class Trooper extends Being
             $new_skill = $this->chooseSkill($mercenary_skills, $this->skill_tables);
             if ( $new_skill[0] == '+' ) {
                 $stat_to_increase = $new_skill[3] . $new_skill[4] . $new_skill[5];
-                $this->raiseStat(&$this->stats, $stat_to_increase, 1);
+                $this->raiseStat($this->stats, $stat_to_increase, 1);
             } else {
                 $this->skills = $this->addSkill($this->skills, $new_skill);
             }

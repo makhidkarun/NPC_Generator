@@ -111,7 +111,7 @@ abstract class Being
         return $this->upp;
     }
        
-    public function raiseStat($stats, $stat_to_raise, $raise_by)
+    public function raiseStat(&$stats, $stat_to_raise, $raise_by)
     {
         // Max stat is 15
         if ($stats[$stat_to_raise] < 15) {
