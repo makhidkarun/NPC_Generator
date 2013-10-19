@@ -1,3 +1,8 @@
+19 Oct 13.  Still working on making sure the Lithuim->Mongo
+                connection actually works.
+            Have tested the PHP->Mongo connection.
+ 
+
 Steps to install and use Lithium.
 
 1. cd /var/www/html
