@@ -1,6 +1,6 @@
 <?php
 
-namespace makhidkarun\NPC_Generator;
+// namespace makhidkarun\NPC_Generator;
 
 function __autoload($class)
 {
