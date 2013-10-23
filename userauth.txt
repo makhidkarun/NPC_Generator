@@ -1,0 +1,23 @@
+Goal:
+
+A simple, clean, functional authentication mechanism that
+will let any user input their username and a password
+so that inserts can be "authorized". This will let
+the database tie input to users, and only allow the 
+authorized users to input data. 
+
+Issues:
+
+How to get user info into a script?
+User a db for userinfo?
+Secure transmission.
+Input validation
+
+TODO:
+
+Ask around for pre-existing tools.
+Make authorization a class?
+Decide on auth store and create a process for maintaining it.
+Identify what files need authorization.
+
+
