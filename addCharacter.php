@@ -3,10 +3,16 @@
 
 // require_once 'autoload.php';
 
-$m = new MongoClient();
-$db = $m->traveller;
-$collection = $db->npcs;
-
+try {
+    $m = new MongoClient();
+    $db = $m->traveller;
+    $collection = $db->npcs;
+}
+catch (MongoConnectionException $e) { 
+    echo "Could not connect to MongoDB: $e" . "\n";
+    exit();
+}
+    
 $doc = array();
 
 /*
