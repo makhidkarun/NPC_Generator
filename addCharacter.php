@@ -36,6 +36,9 @@ foreach ($new_nco->getSkillTables() as $table => $value ) {
 }
 */
 
+// $user['username'] = $_Post['username'];
+// $user['userpassword'] = $_POST['password'];
+
 $doc['Name'] = $_POST['firstname'] . " " . $_POST['lastname'];
 $doc['UPP'] = $_POST['UPP'];
 
