@@ -2,6 +2,8 @@
 
 // RoleAbstract.php
 // From MAXCHUCK on #phpmentoring
+
+namespace NPC_Generator;
  
 abstract class MilitaryRoleAbstract {
 

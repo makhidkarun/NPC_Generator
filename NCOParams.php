@@ -22,7 +22,7 @@
  * 
 */
 
-// namespace makhidkarun\NPC_Generator;
+namespace NPC_Generator;
 
 require_once 'MilitaryRoleAbstract.php';
 

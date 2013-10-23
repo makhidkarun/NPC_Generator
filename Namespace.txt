@@ -1,3 +1,5 @@
+Issues:
+
 Well, not sure how how work namespaces 
  - Need to figure out where the files go
  - How they are called 
@@ -5,5 +7,14 @@ Well, not sure how how work namespaces
     best use namespaces and reuse code.
  - Look at composer for dependencies?
 
+Initial Resolution:
 
+Put test_Trooper.php and autoload.php in the parent directory. 
+ - Make autoload.php str_replace '\' for '/'
+Put "namespace NPC_Generator;" in the files in NPC_Generator
+
+TODO:
+
+Look at the SPL autoload.
+ - How is it installed on a RHEL/CentOS box?
 

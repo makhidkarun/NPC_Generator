@@ -3,6 +3,8 @@
 // Dice.php
 // Helper class with dice and random number conventions.
 
+namespace NPC_Generator;
+
 class Dice {
 
     public function roll_dice($num_dice, $die_min, $die_max) {
