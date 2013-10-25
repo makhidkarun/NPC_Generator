@@ -1,22 +1,21 @@
 <?php
 
-$user = array();
+function userAuth($user, $password){
 
-$user['fred']['password'] = 'guido';
+    echo "In userAuth\n";
 
-$given_password = 'sam';
+$users = array( 'alice' => 'dog123',
+                'bob' => 'my_pwd',
+                'charlie' => '**fun**');
 
-if ( $given_password == $user['fred']['password']) {
-    echo "You answered $given_password, which matches!\n";
-} else {
-    echo "You answered $given_password, which does not match.\n";
+if (! array_key_exists($user, $users)){
+    echo "Please enter a valid username and password.";
+//    return false;
 }
-
-$given_password = 'guido';
-
-if ( $given_password == $user['fred']['password']) {
-    echo "You answered $given_password, which matches!\n";
-} else {
-    echo "You answered $given_password, which does not match.\n";
+ 
+if ( $password == $users[$user]) {
+    echo "Welcome!\n";
+//    return true;
+}
 }
 
