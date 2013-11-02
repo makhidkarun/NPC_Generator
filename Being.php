@@ -142,7 +142,7 @@ abstract class Being
         // There are a lot of modifiers to this stuff.
         // Maybe break it up so that the table is chosen
         //  and then the modifiers applied?
-        // Must take into assount the max on the table
+        // Must take into account the max on the table
         //  as well as rank, etc.
         $roll = mt_rand(1, 6);
         $rand_table = array_rand($skill_tables);
