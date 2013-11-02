@@ -83,7 +83,7 @@ abstract class Being
     {
         foreach ($stats as $stat => $value) {
             $die = new Dice();
-            $stats[$stat] = $die->roll_dice(2, 1, 6);
+            $stats[$stat] = $die->rollDice(2, 1, 6);
         }
         return $stats;
     }
