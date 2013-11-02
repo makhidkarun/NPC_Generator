@@ -1,67 +1,39 @@
 <?php
 
-// use NPC_Generator;
-//use makhidkarun\NPC_Generator;
-
 require_once 'autoload.php';
 
-/*
-$new_guy = new Trooper( new TrooperParams);
-$desc = "The new ";
-$desc .= $new_guy->get_rank();
-$desc .= ", ";
-$desc .= $new_guy->get_name();
-$desc .= ", is a ";
-$desc .=  $new_guy->getAge(); 
-$desc .=  " year old "; 
-$desc .= $new_guy->get_gender();
-$desc .= " with a ";
-$desc .= $new_guy->get_upp();
-$desc .= " UPP";
-$desc .= ".\n";
+function newTroopTxt($newGuy){
 
-echo "$desc";
-foreach ($new_guy->get_skills() as $skill => $level) {
-    echo "$skill : $level\n";
-}
-echo "Skill tables: ";
+    $desc = "The new ";
+    $desc .= $newGuy->getMos();
+    $desc .= " ";
+    $desc .= $newGuy->getRank();
+    $desc .= ", ";
+    $desc .= $newGuy->getName();
+    $desc .= ", is a ";
+    $desc .=  $newGuy->getAge(); 
+    $desc .=  " year old "; 
+    $desc .= $newGuy->getGender();
+    $desc .= " with a ";
+    $desc .= $newGuy->getUpp();
+    $desc .= " UPP";
+    $desc .= ".\n";
 
-foreach ($new_guy->get_skill_tables() as $table => $value ) {
-    echo "$table ";
-}
-echo "\n";
-$desc = '';
-*/ 
+    echo "$desc";
+    foreach ($newGuy->getSkills() as $skill => $level) {
+        echo "$skill : $level\n";
+    }   
 
+    echo "Skill tables: ";
 
-$new_nco = new \NPC_Generator\Trooper(new \NPC_Generator\NCOParams);
-// $new_nco = new Trooper(new NCOParams);
-$desc = "The new ";
-$desc .= $new_nco->getMos();
-$desc .= " ";
-$desc .= $new_nco->getRank();
-$desc .= ", ";
-$desc .= $new_nco->getName();
-$desc .= ", is a ";
-$desc .=  $new_nco->getAge(); 
-$desc .=  " year old "; 
-$desc .= $new_nco->getGender();
-$desc .= " with a ";
-$desc .= $new_nco->getUpp();
-$desc .= " UPP";
-$desc .= ".\n";
-
-echo "$desc";
-foreach ($new_nco->getSkills() as $skill => $level) {
-    echo "$skill : $level\n";
+    foreach ($newGuy->getSkillTables() as $table => $value ) {
+        echo "$table ";
+    }
+    echo "\n";
 }
 
-echo "Skill tables: ";
+$newGuy = new \NPC_Generator\Trooper(new \NPC_Generator\NCOParams);
+newTroopTxt($newGuy);
 
-foreach ($new_nco->getSkillTables() as $table => $value ) {
-    echo "$table ";
-}
-echo "\n";
-
-$desc = '';
-
+$newGuy = new \NPC_Generator\Trooper(new \NPC_Generator\TrooperParams);
+newTroopTxt($newGuy);

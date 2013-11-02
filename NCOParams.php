@@ -15,7 +15,7 @@
  * @copyright   2012-2013 Leam Hall
  * @license     license 1 <http://LICENSEURL.example.com>
  * @version     GIT: 0.2
- * @link        github.com/makhidkarun/Traveller_Mercenary_Generator/blob/master/NCOParams.php
+ * @link        github.com/makhidkarun/NPC_Generator/blob/master/NCOParams.php
  * @see         huh?
  * @since       Original copyright date
  * @assisting   MANCHUCK
@@ -29,7 +29,7 @@ require_once 'MilitaryRoleAbstract.php';
 class NCOParams extends MilitaryRoleAbstract
 {
 
-    public $additional_skill_tables;
+    public $additionalSkillTables;
 
     public function __construct()
     {
@@ -39,7 +39,7 @@ class NCOParams extends MilitaryRoleAbstract
         $this->setMinRank(3);
         $this->setMaxRank(9);
         $this->setRankGroup('enlisted');
-        $this->additional_skill_tables = array('NCO');
+        $this->additionalSkillTables = array('NCO');
 
     }
    

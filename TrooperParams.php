@@ -21,6 +21,8 @@
  * 
 */
 
+namespace NPC_Generator;
+
 require_once 'MilitaryRoleAbstract.php';
 
 class TrooperParams extends MilitaryRoleAbstract
@@ -28,12 +30,12 @@ class TrooperParams extends MilitaryRoleAbstract
     public function __construct()
     {
 
-        $this->set_min_age(16);
-        $this->set_max_age(20);
-        $this->set_min_rank(1);
-        $this->set_max_rank(2);
-        $this->set_rank_group('enlisted');
-        $this->additional_skill_tables = array();
+        $this->setMinAge(16);
+        $this->setMaxAge(20);
+        $this->setMinRank(1);
+        $this->setMaxRank(2);
+        $this->setRankGroup('enlisted');
+        $this->additionalSkillTables = array();
     }
    
     protected function setMinAge($num)

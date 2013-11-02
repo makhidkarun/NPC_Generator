@@ -25,8 +25,6 @@
 
 namespace NPC_Generator;
 
-// require_once 'autoload.php';
-
 class Trooper extends Being
 {
 
@@ -42,10 +40,6 @@ class Trooper extends Being
     public function __construct(MilitaryRoleAbstract $role)
     {
         global $mercenary_skills, $person_params;
-        // require_once 'imperial_ranks.php';
-        // require_once 'MilitaryRoleAbstract.php';
-        // require_once 'TrooperParams.php';
-        // require_once 'NCOParams.php';
         require_once 'mercenary_skills.php';
         require_once 'person_params.php';
 
@@ -62,8 +56,8 @@ class Trooper extends Being
         $this->skill_tables = $this->addSkillTables($this->skill_tables, 'ArmyLife');
         $mos_table = 'MOS_' . $this->mos;
         $this->skill_tables = $this->addSkillTables($this->skill_tables, $mos_table);
-        if (count($role->additional_skill_tables) > 0) {
-            foreach ($role->additional_skill_tables as $key => $value) {
+        if (count($role->additionalSkillTables) > 0) {
+            foreach ($role->additionalSkillTables as $key => $value) {
                 $this->skill_tables = $this->addSkillTables($this->skill_tables, $value);
             }
         }
@@ -87,8 +81,7 @@ class Trooper extends Being
     protected function setRank($rank_group, $rank_roll)
     {
         // This global will go away when I have a db for it.
-        require_once 'imperial_ranks.php';
-        // global $ranks;
+        require 'imperial_ranks.php';
         return $ranks[$rank_group][$rank_roll];
     }
        
