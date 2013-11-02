@@ -68,7 +68,7 @@ class Trooper extends Being
         for ($i = 0; $i <= $num_skills; $i++) {
             $new_skill = $this->chooseSkill($mercenary_skills, $this->skill_tables);
             if ($new_skill[0] == '+') {
-                $stat_to_increase = $new_skill[3] . $new_skill[4] . $new_skill[5];
+                $stat_to_increase = str_replace('+1 ', '', $new_skill);
                 $this->raiseStat($this->stats, $stat_to_increase, 1);
             } else {
                 $this->skills = $this->addSkill($this->skills, $new_skill);
