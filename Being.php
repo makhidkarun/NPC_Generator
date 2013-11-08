@@ -23,8 +23,6 @@
 
 namespace NPC_Generator;
 
-require_once 'Dice.php';
-
 abstract class Being
 {
     public $stats = array('Str' => 0, 'Dex' => 0, 'End' => 0, 'Int' => 0, 'Edu' => 0, 'Soc' => 0);

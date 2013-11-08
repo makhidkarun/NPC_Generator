@@ -24,8 +24,6 @@
 
 namespace NPC_Generator;
 
-require_once 'MilitaryRoleAbstract.php';
-
 class NCOParams extends MilitaryRoleAbstract
 {
 
