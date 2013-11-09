@@ -36,6 +36,8 @@ class Trooper extends Being
     private $max_rank;
     private $rank_group;
     private $rank_roll;
+    private $mercenaryMedals = array();
+    // private $combatServiceRibbons;
 
     public function __construct(MilitaryRoleAbstract $role)
     {
@@ -76,8 +78,29 @@ class Trooper extends Being
         }
         // Final UPP after stats potentially altered.
         $this->upp = $this->setUpp($this->stats);
+
+        $this->awards['CombatServiceRibbons'] = $this->setCombatServiceRibbons($this->age);
+        // $this->mercenaryMedals = $this->setMerc
     }
 
+    protected function setMercenaryMedals($mod)
+    {
+        $medal = new Decoration;
+        return $medal->getMercenaryDecoration($mod);
+    }
+        
+    protected function setCombatServiceRibbons($mod)
+    {
+        $csr = new Decoration;
+        return $csr->getCombatServiceRibbons($mod);
+    }
+    
+    public function getCombatServiceRibbons()
+    {
+        // return 5;
+        return $this->awards['CombatServiceRibbons'];
+    }
+ 
     protected function setRank($rank_group, $rank_roll)
     {
         // This global will go away when I have a db for it.

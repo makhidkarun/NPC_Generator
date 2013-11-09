@@ -31,6 +31,7 @@ abstract class Being
     protected $name;
     protected $age;
     protected $gender;
+    protected $awards = array();
     public $skill_tables = array();
 
     protected function setAge($min, $max)
@@ -58,6 +59,7 @@ abstract class Being
         return $this->gender;
     }
 
+    
     protected function setName($person_params, $race, $gender)
     {
 
@@ -71,6 +73,14 @@ abstract class Being
  
         return $name;
     }
+    
+/*
+    protected function setName($race, $gender)
+    {
+        $name = new Name($race, $gender);
+        return $name;
+    }
+*/       
 
     public function getName()
     {
@@ -146,6 +156,30 @@ abstract class Being
         $rand_table = array_rand($skill_tables);
         $skill = $skill_array[$rand_table][$roll];
         return $skill;
+    }
+
+    public function addAward(&$awards, $award)
+    {
+        if (array_key_exists($award, $awards)){
+            $awards[$award] += 1;
+        } else {
+            $awards[$award] = 1;
+        }
+        return $awards;
+    }
+
+    public function getAwards()
+    {
+        return $this->awards;
+    }
+
+    public function addMedal(&$awards, $medal)
+    {
+        if (array_key_exists($medal, $awards['medal'])){
+            $awards['medal'] += 1;
+        } else {
+            $awards['medal'] = 1;
+        }
     }
 
     public function addSkillTables(&$skill_tables, $table)

@@ -3,32 +3,36 @@
 require_once 'autoload.php';
 
 function newTroopTxt($newGuy){
-
-    $desc = "The new ";
-    $desc .= $newGuy->getMos();
-    $desc .= " ";
+    $desc = '';
     $desc .= $newGuy->getRank();
-    $desc .= ", ";
+    $desc .= " (";
+    $desc .= $newGuy->getMos();
+    $desc .= ") ";
     $desc .= $newGuy->getName();
-    $desc .= ", is a ";
+    $desc .= ", ";
     $desc .=  $newGuy->getAge(); 
-    $desc .=  " year old "; 
+    $desc .=  ", "; 
     $desc .= $newGuy->getGender();
-    $desc .= " with a ";
+    $desc .= "\n";
     $desc .= $newGuy->getUpp();
-    $desc .= " UPP";
-    $desc .= ".\n";
+    $desc .= "\n";
+    $desc .= "Combat Service Ribbons: ";
+    $desc .= $newGuy->getCombatServiceRibbons();
+    $desc .= "\n";
 
+    echo "\n";
     echo "$desc";
     foreach ($newGuy->getSkills() as $skill => $level) {
-        echo "$skill : $level\n";
+        echo "$skill - $level ";
     }   
 
+    echo "\n";
+    /*
     echo "Skill tables: ";
-
     foreach ($newGuy->getSkillTables() as $table => $value ) {
         echo "$table ";
     }
+    */
     echo "\n";
 }
 
