@@ -80,13 +80,35 @@ class Trooper extends Being
         $this->upp = $this->setUpp($this->stats);
 
         $this->awards['CombatServiceRibbons'] = $this->setCombatServiceRibbons($this->age);
-        // $this->mercenaryMedals = $this->setMerc
+        $this->awards['WoundBadges'] = $this->setWoundBadges($this->awards['CombatServiceRibbons']);
+        $this->awards['Medals'] = array();
+        $this->setMedals($this->awards);
+
     }
 
-    protected function setMercenaryMedals($mod)
+    
+    protected function setMedals(&$awards)
     {
+        $mod = 0;
         $medal = new Decoration;
-        return $medal->getMercenaryDecoration($mod);
+        if (array_key_exists('CombatServiceRibbons', $awards)){
+            $mod += ($awards['CombatServiceRibbons'] * 2);
+        }
+        if (array_key_exists('WoundBadges', $awards)){
+            $mod += ($awards['WoundBadges']);
+        }
+        $newMedal = $medal->getMercenaryMedals($mod);
+        if (array_key_exists($newMedal, $awards['Medals'])){
+            $awards['Medals'][$newMedal] += 1;
+        } else {
+            $awards['Medals'][$newMedal] = 1;
+        }
+    }
+
+    protected function setWoundBadges($csr)
+    {
+        $wb = new Decoration;
+        return $wb->getWoundBadges($csr);
     }
         
     protected function setCombatServiceRibbons($mod)
@@ -97,7 +119,6 @@ class Trooper extends Being
     
     public function getCombatServiceRibbons()
     {
-        // return 5;
         return $this->awards['CombatServiceRibbons'];
     }
  

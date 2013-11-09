@@ -16,8 +16,34 @@ function newTroopTxt($newGuy){
     $desc .= "\n";
     $desc .= $newGuy->getUpp();
     $desc .= "\n";
-    $desc .= "Combat Service Ribbons: ";
-    $desc .= $newGuy->getCombatServiceRibbons();
+    $awards = $newGuy->getAwards();
+    // print_r($awards);
+    if (array_key_exists('Medals', $awards)){
+        if (array_key_exists('SEH', $awards['Medals'])){
+            $desc .= "SEH: " . $awards['Medals']['SEH'] . " ";
+        } 
+        if (array_key_exists('MCG', $awards['Medals'])){
+            $desc .= "MCG: " . $awards['Medals']['MCG'] . " ";
+        } 
+        if (array_key_exists('MCUF', $awards['Medals'])){
+            $desc .= "MCUF: " . $awards['Medals']['MCUF'] . " ";
+        }
+    } 
+    if (array_key_exists('CombatServiceRibbons', $awards)){
+        if ($awards['CombatServiceRibbons'] > 0) {
+            $desc .= "Combat Service Ribbons: " . $awards['CombatServiceRibbons'] . " ";
+        }
+    }
+    if (array_key_exists('WoundBadges', $awards)){
+        if ($awards['WoundBadges'] > 0) {
+            $desc .= "Wound Badges: " . $awards['WoundBadges'] . " ";
+        }
+    }
+    /*
+    foreach ($awards as $award => $number){
+        $desc .= "$award : $number  ";
+    }
+    */
     $desc .= "\n";
 
     echo "\n";
