@@ -59,7 +59,8 @@ abstract class Being
         return $this->gender;
     }
 
-    
+   
+/* 
     protected function setName($person_params, $race, $gender)
     {
 
@@ -73,15 +74,21 @@ abstract class Being
  
         return $name;
     }
-    
-/*
+*/
+   
     protected function setName($race, $gender)
     {
-        $name = new Name($race, $gender);
+        try { 
+            $dbh = new \PDO("sqlite:names.db");
+            $nameGenerator = new Name($dbh);
+            $name = $nameGenerator->generate($race, $gender);
+        } catch(PDOException $e) {
+            echo $this->e->getMessage();
+            exit;
+        }
         return $name;
     }
-*/       
-
+       
     public function getName()
     {
         return $this->name;

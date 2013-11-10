@@ -46,7 +46,7 @@ class Trooper extends Being
         require_once 'person_params.php';
 
         $this->gender = $this->setGender(50);
-        $this->name =  $this->setName($person_params, 'humaniti', $this->gender);
+        $this->name =  $this->setName('humaniti', $this->gender);
         $this->stats = $this->setStats($this->stats);
         $this->upp = $this->setUpp($this->stats);
         $rank_roll = mt_rand($role->getMinRank(), $role->getMaxRank());
