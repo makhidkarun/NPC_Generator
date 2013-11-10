@@ -1,0 +1,55 @@
+NPC Generator
+=============
+
+Loosely based on the Classic Traveller Role Playing Game, circa
+1978-1981. This program creates a non-player character (NPC) using
+the same skills a PC would gain. However, it does not strictly follow
+the tables.
+
+Classes
+-------
+
+Being - Root class
+ All sentients have a UPP (6 character hexidecimal string). 
+ The UPP codifies physical, mental, and social capabilities.
+ Modifiers are sometimes based on the UPP. For example, if 
+   UPP the 4th character in the UPP is 0xA or better, you might
+   allow a +1 on a random event.
+ The UPP can be modified later.
+ A being will almost always have a gender, a name, and a list
+   of skills. 
+ A being will often have Awards. Medals in the case of military,
+   citations or other recognitions from civilian pursuits.
+
+Trooper - Basic Mercenary, extends Being
+ A trooper will have a rank. 
+ The rank will influence what skills the trooper can have.
+ The age of the trooper influences the number of skills.
+ A trooper can have earned Combat Service Ribbons, Wound Badges, and 
+   Medals for bravery. 
+ A trooper has a morale score that is heavily influenced by Awards. 
+
+TrooperParams, NCOParams - Modifiers for the randomness in Trooper
+ A Trooper is a junior enlisted. Age, rank modifiers.
+ An NCO is a mid-grade or higher enlisted. Older, extra skill tables.
+ Called in the Trooper __construct as (MilitaryRoleAbstract $role).
+
+Dice - Random number generators
+ Mainly used to generate 2 randoms and add them. Better follows the 2d6
+   nature of Traveller vice a random int from 2-12.
+
+Decoration - Awards, Medals, Citations
+ An array with elements and nested arrays to cover whatever type of award
+   a being might get. 
+ ?? Nested and non-nested ??
+ Called by Trooper to provide awards.
+ Heavily influenced by Object->properties.
+
+Name - Interface to a Names database
+ !! Not yet working.
+ Returns a first and last name based on $culture and $gender.
+ Currently only supports humaniti culture. Will support zhodani, vargr, aslan, and more.
+ Currently a SQLite database.
+
+
+
