@@ -1,16 +1,16 @@
 <?php
 
-// namespace NPC_Generator;
+namespace NPC_Generator;
 
 function __autoload($class)
 {
     $file = './' . $class . '.php';
     $file = str_replace('\\', '/', $file);
+    echo "file is $file\n";
     if (file_exists($file)) {
-    //    echo "How about that $file!";
         require $file;
     } else {
-    //    echo "$file does not exist.";
+        echo "file is $file.\n";
         throw new Exception("Unable to load $file.");
     }
 }
