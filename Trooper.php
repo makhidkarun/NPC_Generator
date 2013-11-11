@@ -43,7 +43,6 @@ class Trooper extends Being
     {
         global $mercenary_skills, $person_params;
         require_once 'mercenary_skills.php';
-        require_once 'person_params.php';
 
         $this->gender = $this->setGender(50);
         $this->name =  $this->setName('humaniti', $this->gender);
@@ -59,7 +58,7 @@ class Trooper extends Being
         $mos_table = 'MOS_' . $this->mos;
         $this->skill_tables = $this->addSkillTables($this->skill_tables, $mos_table);
         if (count($role->additionalSkillTables) > 0) {
-            foreach ($role->additionalSkillTables as $key => $value) {
+            foreach ($role->additionalSkillTables as $value) {
                 $this->skill_tables = $this->addSkillTables($this->skill_tables, $value);
             }
         }
