@@ -58,31 +58,14 @@ abstract class Being
     {
         return $this->gender;
     }
-
-   
-/* 
-    protected function setName($person_params, $race, $gender)
-    {
-
-        $first_rand = mt_rand(0, $person_params['names'][$race]['count'][$gender] - 1);
-        $first_name = $person_params['names'][$race][$gender][$first_rand];
-
-        $last_rand = mt_rand(0, $person_params['names'][$race]['count']['last'] - 1);
-        $last_name = $person_params['names'][$race]['last'][$last_rand];
-   
-        $name = $first_name . ' ' . $last_name;
- 
-        return $name;
-    }
-*/
    
     protected function setName($race, $gender)
     {
-        try { 
+        try {
             $dbh = new \PDO("sqlite:names.db");
             $nameGenerator = new Name($dbh);
             $name = $nameGenerator->generate($race, $gender);
-        } catch(PDOException $e) {
+        } catch (PDOException $e) {
             echo $this->e->getMessage();
             exit;
         }
@@ -167,7 +150,7 @@ abstract class Being
 
     public function addAward(&$awards, $award)
     {
-        if (array_key_exists($award, $awards)){
+        if (array_key_exists($award, $awards)) {
             $awards[$award] += 1;
         } else {
             $awards[$award] = 1;
@@ -182,7 +165,7 @@ abstract class Being
 
     public function addMedal(&$awards, $medal)
     {
-        if (array_key_exists($medal, $awards['medal'])){
+        if (array_key_exists($medal, $awards['medal'])) {
             $awards['medal'] += 1;
         } else {
             $awards['medal'] = 1;

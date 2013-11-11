@@ -91,14 +91,14 @@ class Trooper extends Being
     {
         $mod = 0;
         $medal = new Decoration;
-        if (array_key_exists('CombatServiceRibbons', $awards)){
+        if (array_key_exists('CombatServiceRibbons', $awards)) {
             $mod += ($awards['CombatServiceRibbons'] * 2);
         }
-        if (array_key_exists('WoundBadges', $awards)){
+        if (array_key_exists('WoundBadges', $awards)) {
             $mod += ($awards['WoundBadges']);
         }
         $newMedal = $medal->getMercenaryMedals($mod);
-        if (array_key_exists($newMedal, $awards['Medals'])){
+        if (array_key_exists($newMedal, $awards['Medals'])) {
             $awards['Medals'][$newMedal] += 1;
         } else {
             $awards['Medals'][$newMedal] = 1;

@@ -11,17 +11,18 @@ class Name
         $this->dbh->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
     }
 
-    public function generate($culture, $gender){
+    public function generate($culture, $gender)
+    {
         $knownCultures = array('humaniti');
         $knownGenders = array('male', 'female');
 
         $culture = trim($culture);
-        if (! in_array($culture, $knownCultures)){ 
+        if (! in_array($culture, $knownCultures)) {
             $culture = 'humaniti';
         }
 
         $gender = trim($gender);
-        if (! in_array($gender, $knownGenders)){
+        if (! in_array($gender, $knownGenders)) {
             $gender = 'male';
         }
 
@@ -37,7 +38,6 @@ class Name
         $result = $stmt->fetch();
         return $result['name'];
     }
-
 }
 /*
 try { 
