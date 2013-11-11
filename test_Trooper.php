@@ -1,9 +1,10 @@
 <?php
-// namespace NPC_Generator;
+//namespace NPC_Generator;
 ini_set("display_errors", "1");
 ERROR_REPORTING(E_ALL);
 
 require_once 'autoload.php';
+// use NPC_Generator\Trooper;
 
 function newTroopTxt($newGuy){
     $desc = '';

@@ -1,6 +1,6 @@
 <?php
 
-namespace NPC_Generator;
+// namespace NPC_Generator;
 
 function __autoload($class)
 {
