@@ -47,9 +47,9 @@ class Trooper extends Being
         $this->gender = $this->setGender(50);
         $this->name =  $this->setName('humaniti', $this->gender);
         $this->stats = $this->setStats($this->stats);
-        $this->upp = $this->setUpp($this->stats);
-        $rank_roll = mt_rand($role->getMinRank(), $role->getMaxRank());
-        $this->age = $this->setAge($role->getMinAge(), $role->getMaxAge()) + $rank_roll;
+        $this->years_of_service = mt_rand(1, 20); 
+        $this->age = $this->years_of_service + 17;
+        $rank_roll = intval(mt_rand(($this->years_of_service/4), ($this->years_of_service/2)));
         $this->rank = $this->setRank($role->getRankGroup(), $rank_roll);
 
         // Set the MOS and list of skill tables to choose from

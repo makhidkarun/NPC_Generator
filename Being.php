@@ -31,6 +31,7 @@ abstract class Being
     protected $name;
     protected $age;
     protected $gender;
+    protected $years_of_service;
     protected $awards = array();
     public $skill_tables = array();
 
