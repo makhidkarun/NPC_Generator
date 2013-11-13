@@ -94,7 +94,7 @@ class Trooper extends Being
 
    
     protected function chooseSkill($skills, $table, $modifier) {
-        echo "table is $table, modifier is $modifier.\n";
+        // echo "table is $table, modifier is $modifier.\n";
         $max_roll = count($table);
         $roll = mt_rand(1, 6) + $modifier;
         if ($roll > $max_roll) {
@@ -143,7 +143,9 @@ class Trooper extends Being
         // This global will go away when I have a db for it.
         require 'imperial_ranks.php';
         if ($rank_roll < 1) {
-            $rank_roll == 1;
+            $rank_roll = 1;
+        } elseif ( $rank_roll > count($ranks[$rank_group])) {
+            $rank_roll = count($ranks[$rank_group]);
         }
         return $ranks[$rank_group][$rank_roll];
     }
