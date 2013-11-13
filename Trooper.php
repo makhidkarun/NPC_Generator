@@ -50,24 +50,31 @@ class Trooper extends Being
         $this->years_of_service = mt_rand(1, 20); 
         $this->age = $this->years_of_service + 17;
         $rank_roll = intval(mt_rand(($this->years_of_service/4), ($this->years_of_service/2)));
-        $this->rank = $this->setRank($role->getRankGroup(), $rank_roll);
+        $this->rank_group = 'enlisted';
+        $this->rank = $this->setRank($this->rank_group, $rank_roll);
 
         // Set the MOS and list of skill tables to choose from
         $this->mos = $this->setMos();
         $this->skill_tables = $this->addSkillTables($this->skill_tables, 'ArmyLife');
         $mos_table = 'MOS_' . $this->mos;
         $this->skill_tables = $this->addSkillTables($this->skill_tables, $mos_table);
-        if (count($role->additionalSkillTables) > 0) {
-            foreach ($role->additionalSkillTables as $value) {
-                $this->skill_tables = $this->addSkillTables($this->skill_tables, $value);
-            }
+        if ($this->rank_group == 'enlisted' && $rank_roll > 2) {
+            $this->skill_tables = $this->addSkillTables($this->skill_tables, 'NCO');
         }
-
         // Start adding skills
         $this->skills = $this->addSkill($this->skills, 'GunCbt');
         $num_skills = $rank_roll / 2;
         for ($i = 0; $i <= $num_skills; $i++) {
-            $new_skill = $this->chooseSkill($mercenary_skills, $this->skill_tables);
+            $rand_table = array_rand($this->skill_tables);
+            if ($rand_table == 'ArmyLife' && $this->rank_group == 'officer') {
+                $modifier = intval($rank_roll/3);
+            } elseif ($rand_table == 'NCO' && $rank_roll > 4) {
+                $modifier = $rank_roll - 4;
+            } else {
+                $modifier = 0;
+            }
+
+            $new_skill = $this->chooseSkill($mercenary_skills, $rand_table, $modifier);
             if ($new_skill[0] == '+') {
                 $stat_to_increase = str_replace('+1 ', '', $new_skill);
                 $this->raiseStat($this->stats, $stat_to_increase, 1);
@@ -85,7 +92,17 @@ class Trooper extends Being
 
     }
 
-    
+   
+    protected function chooseSkill($skills, $table, $modifier) {
+        echo "table is $table, modifier is $modifier.\n";
+        $max_roll = count($table);
+        $roll = mt_rand(1, 6) + $modifier;
+        if ($roll > $max_roll) {
+            $roll = $max_roll;
+        }
+        return $skills[$table][$roll];
+    }
+         
     protected function setMedals(&$awards)
     {
         $mod = 0;
@@ -125,6 +142,9 @@ class Trooper extends Being
     {
         // This global will go away when I have a db for it.
         require 'imperial_ranks.php';
+        if ($rank_roll < 1) {
+            $rank_roll == 1;
+        }
         return $ranks[$rank_group][$rank_roll];
     }
        

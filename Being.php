@@ -135,8 +135,9 @@ abstract class Being
     {
         return $this->skills;
     }
-   
-    public function chooseSkill ($skill_array, $skill_tables)
+  
+/* 
+    protected function chooseSkill ($skill_array, $skill_tables)
     {
         // There are a lot of modifiers to this stuff.
         // Maybe break it up so that the table is chosen
@@ -145,10 +146,11 @@ abstract class Being
         //  as well as rank, etc.
         $roll = mt_rand(1, 6);
         $rand_table = array_rand($skill_tables);
+        
         $skill = $skill_array[$rand_table][$roll];
         return $skill;
     }
-
+*/
     public function addAward(&$awards, $award)
     {
         if (array_key_exists($award, $awards)) {
