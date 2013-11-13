@@ -94,7 +94,6 @@ class Trooper extends Being
 
    
     protected function chooseSkill($skills, $table, $modifier) {
-        // echo "table is $table, modifier is $modifier.\n";
         $max_roll = count($table);
         $roll = mt_rand(1, 6) + $modifier;
         if ($roll > $max_roll) {
