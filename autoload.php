@@ -1,31 +1,18 @@
 <?php
 
-namespace NPC_Generator;
+// namespace NPC_Generator;
 
-function __autoload($className)
+function __autoload($class)
 {
-    $className = ltrim($className, '\\');
-    $fileName = '';
-    $namespace = '';
-    if ($lastNsPos = strrpos($className, '\\')) {
-        $namespace = substr($classname, 0, $lastNsPos);
-        $className = substr($className, $lastNsPos + 1);
-        $fileName = str_replace('\\', DIRECTORY_SEPARATOR, $namespace) . DIRECTORY_SEPATATOR;
-    }
-    $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className);
-
-    require $fileName;
-}
-/*
     $file = './' . $class . '.php';
     $file = str_replace('\\', '/', $file);
-    echo "file is $file\n";
     if (file_exists($file)) {
+    //    echo "How about that $file!";
         require $file;
     } else {
-        echo "file is $file.\n";
+    //    echo "$file does not exist.";
         throw new Exception("Unable to load $file.");
     }
 }
 
-*/
+

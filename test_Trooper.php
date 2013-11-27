@@ -1,10 +1,6 @@
 <?php
-//namespace NPC_Generator;
-ini_set("display_errors", "1");
-ERROR_REPORTING(E_ALL);
 
 require_once 'autoload.php';
-// use NPC_Generator\Trooper;
 
 function newTroopTxt($newGuy){
     $desc = '';
@@ -21,6 +17,7 @@ function newTroopTxt($newGuy){
     $desc .= $newGuy->getUpp();
     $desc .= "\n";
     $awards = $newGuy->getAwards();
+    // print_r($awards);
     if (array_key_exists('Medals', $awards)){
         if (array_key_exists('SEH', $awards['Medals'])){
             $desc .= "SEH: " . $awards['Medals']['SEH'] . " ";
@@ -51,12 +48,15 @@ function newTroopTxt($newGuy){
     }   
 
     echo "\n";
+    // echo "Skill tables: ";
+    // foreach ($newGuy->getSkillTables() as $table => $value ) {
+    //    echo "$table ";
+    // }
     echo "\n";
 }
 
-$newGuy = new Trooper(new NCOParams);
+$newGuy = new NPC_Generator\Trooper(new \NPC_Generator\NCOParams);
 newTroopTxt($newGuy);
-/*
-$newGuy = new Trooper(new TrooperParams);
+
+$newGuy = new NPC_Generator\Trooper(new \NPC_Generator\TrooperParams);
 newTroopTxt($newGuy);
-*/
