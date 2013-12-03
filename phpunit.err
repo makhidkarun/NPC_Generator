@@ -1,0 +1,21 @@
+PHPUnitm@shaphan NPC_Generator]$ phpunit --testsuite UPP 
+PHP Warning:  Module 'mongo' already loaded in Unknown on line 0
+
+PHPUnit 3.7.22 by Sebastian Bergmann.
+
+Configuration read from /home/leam/lang/git/makhidkarun/NPC_Generator/phpunit.xml
+
+PHP Fatal error:  Class 'NPC_Generator\Trooper' not found in /home/leam/lang/git/makhidkarun/NPC_Generator/Tests/UPPTest.php on line 14
+PHP Stack trace:
+PHP   1. {main}() /usr/bin/phpunit:0
+PHP   2. PHPUnit_TextUI_Command::main() /usr/bin/phpunit:46
+PHP   3. PHPUnit_TextUI_Command->run() /usr/share/pear/PHPUnit/TextUI/Command.php:129
+PHP   4. PHPUnit_TextUI_TestRunner->doRun() /usr/share/pear/PHPUnit/TextUI/Command.php:176
+PHP   5. PHPUnit_Framework_TestSuite->run() /usr/share/pear/PHPUnit/TextUI/TestRunner.php:349
+PHP   6. PHPUnit_Framework_TestSuite->run() /usr/share/pear/PHPUnit/Framework/TestSuite.php:705
+PHP   7. PHPUnit_Framework_TestSuite->runTest() /usr/share/pear/PHPUnit/Framework/TestSuite.php:745
+PHP   8. PHPUnit_Framework_TestCase->run() /usr/share/pear/PHPUnit/Framework/TestSuite.php:775
+PHP   9. PHPUnit_Framework_TestResult->run() /usr/share/pear/PHPUnit/Framework/TestCase.php:776
+PHP  10. PHPUnit_Framework_TestCase->runBare() /usr/share/pear/PHPUnit/Framework/TestResult.php:648
+PHP  11. UPPTest->setup() /usr/share/pear/PHPUnit/Framework/TestCase.php:828
+
