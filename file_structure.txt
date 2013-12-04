@@ -1,0 +1,9 @@
+Githup repo: makhidkarun
+Project: NPC_generator
+Base Directory:  ~leam/lang/git/makhidkarun/NPC_Generator
+    Location of phpunit.xml and test_Trooper.php, a non-PHPUnit tester.
+    autoload.php
+Scripts Directory: ~leam/lang/git/makhidkarun/NPC_Generator/NPC_Generator
+    Namespace NPC_Generator
+Tests Directory: ~leam/lang/git/makhidkarun/NPC_Generator/Tests
+
