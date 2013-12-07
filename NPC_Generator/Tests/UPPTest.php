@@ -1,8 +1,11 @@
 <?php
 
-require_once 'autoload.php';
-//require_once 'NPC_Generator/Trooper.php';
-// namespace NPC_Generator;
+namespace NPC_Generator\Test;
+// require_once 'autoload.php';
+require_once 'Trooper.php';
+// require_once 'Being.php';
+
+// use NPC_Generator\Trooper;
 
 class UPPTest extends \PHPUnit_Framework_TestCase
 {
@@ -11,7 +14,8 @@ class UPPTest extends \PHPUnit_Framework_TestCase
 
     protected function setup()
     {
-        $trooper = new \NPC_Generator\Trooper(new \NPC_Generator\NCOParams);
+        // $trooper = new NPC_Generator\Trooper(new NPC_Generator\NCOParams);
+        $trooper = new Trooper(new NCOParams);
         $this->testUPP = $trooper->getUPP();
     }
 
