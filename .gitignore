@@ -1,0 +1,15 @@
+# Ignore files that are products of program runs
+output/*
+
+# Old backup files
+sav/*
+
+# Files being edited.
+*.swp
+
+# Database files
+#*.db
+
+# SQL commands
+*.sql
+
